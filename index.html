@@ -12,12 +12,19 @@
     <header>
         <h1>Instan kaleidoskope</h1>
     </header>
-    <div class="category-nav">
-        <a href="auto.html" class="cat-btn">Auto</a>
-        <a href="velo.html" class="cat-btn">Vélo</a>
-        <a href="paysage.html" class="cat-btn">Paysage</a>
-        <a href="astral.html" class="cat-btn">Astral</a>
-    </div>
+    <!-- Menu hamburger -->
+    <nav class="hamburger-nav">
+        <button class="hamburger-btn" aria-label="Ouvrir le menu" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="hamburger-menu" id="menuNav">
+            <a href="auto.html" class="cat-btn">Auto</a>
+            <a href="velo.html" class="cat-btn">Vélo</a>
+            <a href="paysage.html" class="cat-btn">Paysage</a>
+            <a href="astral.html" class="cat-btn">Astral</a>
+        </div>
+    </nav>
+    <!-- Fin menu hamburger -->
     <main>
         <div class="sections">
             <a class="section" id="auto" href="auto.html">
@@ -49,5 +56,12 @@
         </a>
     </footer>
     <script src="js.javascrip"></script>
+    <script>
+    // Menu hamburger JS
+    function toggleMenu() {
+        const menu = document.getElementById('menuNav');
+        menu.classList.toggle('open');
+    }
+    </script>
 </body>
 </html>

@@ -16,6 +16,20 @@
         <a href="velo.html" class="cat-btn">Vélo</a>
         <a href="astral.html" class="cat-btn">Astral</a>
     </div>
+    <!-- Menu hamburger -->
+    <nav class="hamburger-nav">
+        <button class="hamburger-btn" aria-label="Ouvrir le menu" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="hamburger-menu" id="menuNav">
+            <a href="index.html" class="cat-btn">Accueil</a>
+            <a href="auto.html" class="cat-btn">Auto</a>
+            <a href="velo.html" class="cat-btn">Vélo</a>
+            <a href="paysage.html" class="cat-btn">Paysage</a>
+            <a href="astral.html" class="cat-btn">Astral</a>
+        </div>
+    </nav>
+    <!-- Fin menu hamburger -->
     <div class="gallery-grid">
         <img src="image/Paysage/IMG_1778.JPG" alt="Paysage 1" class="zoomable" onclick="afficherImageEnGrand(this.src)">
         <img src="image/Paysage/IMG_1800.JPG" alt="Paysage 2" class="zoomable" onclick="afficherImageEnGrand(this.src)">
@@ -31,5 +45,12 @@
         </a>
     </footer>
     <script src="js.javascrip"></script>
+    <script>
+    // Menu hamburger JS
+    function toggleMenu() {
+        const menu = document.getElementById('menuNav');
+        menu.classList.toggle('open');
+    }
+    </script>
 </body>
 </html>

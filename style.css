@@ -71,6 +71,43 @@ header h1 {
         padding: 24px 8px;
     }
 }
+@media (max-width: 900px) {
+  .sections {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin: 30px auto;
+    max-width: 98vw;
+    padding: 0 8px;
+  }
+  .section {
+    max-width: 95vw;
+    min-width: 0;
+    padding: 24px 8px;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+  .hamburger-menu {
+    min-width: 140px;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  body {
+    font-size: 0.95rem;
+  }
+  .section h2 {
+    font-size: 1.2rem;
+  }
+  .section img {
+    width: 60px;
+    height: 60px;
+  }
+  footer {
+    font-size: 1.2rem;
+    padding: 18px 0 6px 0;
+  }
+}
 .section h2 {
     color: #ff69b4;
 }
@@ -139,4 +176,68 @@ footer {
 #image-overlay {
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
+}
+
+/* Menu hamburger */
+.hamburger-nav {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start !important;
+    align-items: center;
+    margin: 20px 0;
+}
+.hamburger-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    z-index: 1001;
+}
+.hamburger-btn span {
+    display: block;
+    width: 32px;
+    height: 4px;
+    margin: 4px 0;
+    background: #ff69b4;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+.hamburger-menu {
+    position: absolute;
+    top: 54px;
+    left: 0;
+    background: #222;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    display: none;
+    flex-direction: column;
+    min-width: 180px;
+    padding: 12px 0;
+    z-index: 1000;
+}
+.hamburger-menu.open {
+    display: flex;
+}
+.hamburger-menu a {
+    color: #ff69b4;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: bold;
+    border-bottom: 1px solid #333;
+    transition: background 0.2s, color 0.2s;
+}
+.hamburger-menu a:last-child {
+    border-bottom: none;
+}
+.hamburger-menu a:hover {
+    background: #ff69b4;
+    color: #222;
 }

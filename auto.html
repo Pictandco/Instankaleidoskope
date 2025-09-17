@@ -10,12 +10,20 @@
 <body>
     <h1>Photographie Auto</h1>
     <p>Découvrez nos plus belles photos de voitures et sports mécaniques.</p>
-    <div class="category-nav">
-        <a href="index.html" class="cat-btn">Accueil</a>
-        <a href="velo.html" class="cat-btn">Vélo</a>
-        <a href="paysage.html" class="cat-btn">Paysage</a>
-        <a href="astral.html" class="cat-btn">Astral</a>
-    </div>
+    <!-- Menu hamburger -->
+    <nav class="hamburger-nav">
+        <button class="hamburger-btn" aria-label="Ouvrir le menu" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="hamburger-menu" id="menuNav">
+            <a href="index.html" class="cat-btn">Accueil</a>
+            <a href="auto.html" class="cat-btn">Auto</a>
+            <a href="velo.html" class="cat-btn">Vélo</a>
+            <a href="paysage.html" class="cat-btn">Paysage</a>
+            <a href="astral.html" class="cat-btn">Astral</a>
+        </div>
+    </nav>
+    <!-- Fin menu hamburger -->
     <div class="gallery-grid">
         <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=400&q=80" alt="Auto 1" class="zoomable" onclick="afficherImageEnGrand(this.src)">
         <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=400&q=80" alt="Auto 2" class="zoomable" onclick="afficherImageEnGrand(this.src)">
@@ -31,5 +39,12 @@
         </a>
     </footer>
     <script src="js.javascrip"></script>
+    <script>
+    // Menu hamburger JS
+    function toggleMenu() {
+        const menu = document.getElementById('menuNav');
+        menu.classList.toggle('open');
+    }
+    </script>
 </body>
 </html>

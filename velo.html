@@ -10,12 +10,19 @@
 <body>
     <h1>Photographie Vélo</h1>
     <p>Plongez dans l'univers du cyclisme à travers nos photos.</p>
-    <div class="category-nav">
-        <a href="index.html" class="cat-btn">Accueil</a>
-        <a href="auto.html" class="cat-btn">Auto</a>
-        <a href="paysage.html" class="cat-btn">Paysage</a>
-        <a href="astral.html" class="cat-btn">Astral</a>
-    </div>
+    <!-- Menu hamburger -->
+    <nav class="hamburger-nav">
+        <button class="hamburger-btn" aria-label="Ouvrir le menu" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="hamburger-menu" id="menuNav">
+            <a href="index.html" class="cat-btn">Accueil</a>
+            <a href="auto.html" class="cat-btn">Auto</a>
+            <a href="paysage.html" class="cat-btn">Paysage</a>
+            <a href="astral.html" class="cat-btn">Astral</a>
+        </div>
+    </nav>
+    <!-- Fin menu hamburger -->
     <div class="gallery-grid">
         <img src="image/Velo/1000002056.jpg" alt="Velo 1" class="zoomable" onclick="afficherImageEnGrand(this.src)">
         <img src="image/Velo/1000006734.JPG" alt="Velo 2" class="zoomable" onclick="afficherImageEnGrand(this.src)">
@@ -31,5 +38,12 @@
         </a>
     </footer>
     <script src="js.javascrip"></script>
+    <script>
+    // Menu hamburger JS
+    function toggleMenu() {
+        const menu = document.getElementById('menuNav');
+        menu.classList.toggle('open');
+    }
+    </script>
 </body>
 </html>
