@@ -74,7 +74,7 @@ body {
     color: #ff69b4;
 }
 p {
-    color: #fff;
+    color: #000000;
 }
 body {
     background: #181818;
@@ -94,7 +94,7 @@ a {
 footer {
     text-align: center;
     padding: 30px 0 10px 0;
-    color: #fff;
+    color: #000000;
     font-size: 2rem; /* Taille augmentée pour visibilité */
     background: rgba(24, 24, 24, 0.92);
     box-shadow: 0 -2px 12px rgba(0,0,0,0.18);
@@ -111,4 +111,15 @@ footer .insta-link img {
     box-shadow: 0 2px 8px rgba(0,0,0,0.18);
     padding: 4px;
     border-radius: 8px;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80') center center / cover no-repeat;
+    filter: blur(8px) brightness(0.7);
 }
