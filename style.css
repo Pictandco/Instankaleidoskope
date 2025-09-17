@@ -127,31 +127,18 @@ header h1 {
 footer {
     text-align: center;
     padding: 30px 0 10px 0;
-    color: #181818; /* Texte noir */
+    color: #181818; 
     font-size: 2rem;
-    background: none; /* On retire le background image du footer */
-    /*box-shadow: 0 -2px 12px rgba(0,0,0,0.18);*/
+    background: none;
     width: 100%;
     margin: 0 auto;
     position: relative;
     bottom: 0;
     left: 0;
-    right: 0;
-    
+    right: 0; 
     z-index: 10;
-    /*border-top: 2px solid #ff69b4;*/
-    /* Le footer est transparent pour laisser apparaître le body::before en dessous */
 }
 
-
-/* Centrage des boutons de navigation sur la page d'accueil */
-.category-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 18px;
-    margin: 30px 0 0 0;
-}
 .cat-btn {
     display: inline-block;
     background: #222;
