@@ -1,0 +1,142 @@
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80') center center / cover no-repeat;
+    filter: blur(8px) brightness(0.7);
+}
+
+
+/* Masquer le soulignement bleu sur les liens de section */
+.section {
+    text-decoration: none !important;
+    color: inherit;
+    background: linear-gradient(90deg, #232526 0%, #414345 100%);
+    padding: 40px 0 20px 0;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+
+header h1 {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 2.8rem;
+    flex-shrink: 0;
+    /* border-top: 2px solid #ff69b4; */
+    /*align-items: center;*/
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: #ff69b4;
+    
+}
+
+
+.sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin: 50px auto;
+    max-width: 900px;
+    padding: 0 20px;
+}
+.section {
+    background: #222;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+    min-width: 220px;
+    max-width: 340px;
+    width: 100%;
+    padding: 32px 24px;
+    text-align: center;
+    transition: transform 0.2s;
+    color: #ff69b4;
+    text-decoration: none !important;
+    margin: 0 auto;
+}
+@media (max-width: 700px) {
+    .sections {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin: 30px auto;
+    }
+    .section {
+        max-width: 95vw;
+        min-width: 0;
+        padding: 24px 8px;
+    }
+}
+.section h2 {
+    color: #ff69b4;
+}
+.section:hover {
+    transform: translateY(-8px) scale(1.03);
+}
+.section img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 18px;
+}
+.section p {
+    font-size: 1rem;
+    color: #fff;
+}
+footer {
+    text-align: center;
+    padding: 30px 0 10px 0;
+    color: #181818; /* Texte noir */
+    font-size: 2rem;
+    background: none; /* On retire le background image du footer */
+    /*box-shadow: 0 -2px 12px rgba(0,0,0,0.18);*/
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    z-index: 10;
+    /*border-top: 2px solid #ff69b4;*/
+    /* Le footer est transparent pour laisser apparaître le body::before en dessous */
+}
+
+
+/* Centrage des boutons de navigation sur la page d'accueil */
+.category-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin: 30px 0 0 0;
+}
+.cat-btn {
+    display: inline-block;
+    background: #222;
+    color: #ff69b4;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 28px;
+    font-size: 1.08rem;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+    margin: 0 10px;
+}
+.cat-btn:hover {
+    background: #ff69b4;
+    color: #222;
+}
+/* Ajout des préfixes pour compatibilité flou sur overlay */
+#image-overlay {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}

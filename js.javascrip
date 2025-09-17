@@ -1,0 +1,99 @@
+// Script utile pour le site Instankaleidoskope
+// Ce script permet d'afficher une image en grand lorsqu'on clique dessus
+// et de fermer l'aperçu en cliquant à côté ou sur une croix.
+
+/*
+Explications :
+- La fonction afficherImageEnGrand(url) crée un fond sombre (overlay) qui recouvre toute la page.
+- Elle affiche l'image cliquée au centre de l'écran, en grand format.
+- Un bouton croix (✖) permet de fermer l'aperçu.
+- On peut aussi fermer l'aperçu en cliquant sur le fond sombre.
+- Pour utiliser ce script, il suffit d'ajouter l'attribut onclick sur une balise <img> :
+  <img src="monimage.jpg" onclick="afficherImageEnGrand(this.src)">
+*/
+
+/*
+Explications :
+- Pour flouter le fond, on utilise la propriété CSS 'backdrop-filter: blur(8px);' sur l'overlay.
+- Le fond de l'overlay devient semi-transparent, et le contenu derrière est flouté.
+*/
+
+// Fonction d'affichage de l'image en grand
+function afficherImageEnGrand(url) {
+    // Création du fond flou qui recouvre la page
+    const overlay = document.createElement('div');
+    overlay.id = 'image-overlay';
+    overlay.style.position = 'fixed';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100vw';
+    overlay.style.height = '100vh';
+    overlay.style.background = 'rgba(255,255,255,0.2)'; // Fond semi-transparent
+    overlay.style.backdropFilter = 'blur(8px)'; // Flou du fond
+    overlay.style.display = 'flex';
+    overlay.style.alignItems = 'center';
+    overlay.style.justifyContent = 'center';
+    overlay.style.zIndex = '1000';
+
+    // Création de l'image affichée en grand
+    const img = document.createElement('img');
+    img.src = url;
+    img.style.maxWidth = '80vw';
+    img.style.maxHeight = '80vh';
+    img.style.borderRadius = '10px';
+    img.style.boxShadow = '0 0 20px #000';
+
+    // Création du bouton de fermeture (croix)
+    const closeBtn = document.createElement('span');
+    closeBtn.innerText = '✖';
+    closeBtn.style.position = 'absolute';
+    closeBtn.style.top = '30px';
+    closeBtn.style.right = '40px';
+    closeBtn.style.fontSize = '2rem';
+    closeBtn.style.color = '#fff';
+    closeBtn.style.cursor = 'pointer';
+    closeBtn.style.zIndex = '1001';
+    closeBtn.onclick = () => document.body.removeChild(overlay);
+
+    // Ajout de l'image et du bouton à l'overlay
+    overlay.appendChild(img);
+    overlay.appendChild(closeBtn);
+
+    // Fermeture de l'aperçu si on clique sur le fond sombre
+    overlay.onclick = (e) => {
+        if (e.target === overlay) document.body.removeChild(overlay);
+    };
+
+    // Ajout de l'overlay à la page
+    document.body.appendChild(overlay);
+}
+
+/*
+Effet d'agrandissement au survol :
+- Ce script ajoute un effet d'agrandissement (zoom) sur toutes les images de la page.
+- Au passage de la souris, l'image grandit légèrement et revient à sa taille normale quand la souris quitte.
+*/
+
+function ajouterEffetZoomImages() {
+    // Sélectionne toutes les balises <img> de la page
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        // Ajoute l'effet au survol
+        img.addEventListener('mouseenter', () => {
+            img.style.transition = 'transform 0.3s';
+            img.style.transform = 'scale(1.08)'; // Agrandit l'image
+        });
+        // Retire l'effet quand la souris quitte
+        img.addEventListener('mouseleave', () => {
+            img.style.transform = 'scale(1)'; // Retour à la taille normale
+        });
+    });
+}
+
+// Appelle la fonction au chargement de la page
+window.addEventListener('DOMContentLoaded', ajouterEffetZoomImages);
+
+// Exemple d'utilisation :
+// <img src="monimage.jpg" onclick="afficherImageEnGrand(this.src)">
+
+// Ce script améliore l'expérience utilisateur pour la visualisation des images.

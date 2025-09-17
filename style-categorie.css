@@ -1,0 +1,114 @@
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    gap: 24px;
+    margin: 40px auto 20px auto;
+    max-width: 1400px;
+    padding: 0 10px;
+}
+.gallery-grid img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    background: #222;
+    transition: transform 0.18s;
+}
+.gallery-grid img:hover {
+    transform: scale(1.04);
+}
+.gallery-grid img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    background: #222;
+    transition: transform 0.18s;
+}
+.gallery-grid img:hover {
+    transform: scale(1.04);
+}
+.category-nav {
+    margin: 24px 0 10px 0;
+    text-align: center;
+}
+.cat-btn {
+    display: inline-block;
+    background: #222;
+    color: #ff69b4;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 28px;
+    margin: 0 10px;
+    font-size: 1.08rem;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+}
+.cat-btn:hover {
+    background: #ff69b4;
+    color: #222;
+}
+a.gallery table {
+    margin: 40px auto 20px auto;
+    border-collapse: separate;
+    border-spacing: 18px 12px;
+}
+a.gallery img {
+    width: 220px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    background: #222;
+}
+body {
+    background: #181818;
+    font-family: 'Roboto', Arial, sans-serif;
+    text-align: center;
+    color: #ff69b4;
+}
+p {
+    color: #fff;
+}
+body {
+    background: #181818;
+    font-family: 'Roboto', Arial, sans-serif;
+    text-align: center;
+}
+h1 {
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin-top: 60px;
+}
+a {
+    color: #ffd700;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 30px;
+}
+footer {
+    text-align: center;
+    padding: 30px 0 10px 0;
+    color: #fff;
+    font-size: 2rem; /* Taille augmentée pour visibilité */
+    background: rgba(24, 24, 24, 0.92);
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.18);
+    width: 100vw;
+    margin: 0 auto;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 2px solid #ff69b4;
+}
+footer .insta-link img {
+    background: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    padding: 4px;
+    border-radius: 8px;
+}
