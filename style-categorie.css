@@ -83,6 +83,7 @@ body {
     font-family: 'Roboto', Arial, sans-serif;
     text-align: center;
     color: #ff69b4;
+    padding-bottom: 120px; /* Espace pour le footer fixe */
 }
 p {
     color: #000000;
@@ -105,17 +106,16 @@ a {
 footer {
     text-align: center;
     padding: 30px 0 10px 0;
-    color: #000000;
-    font-size: 2rem; /* Taille augmentée pour visibilité */
-    background: rgba(24, 24, 24, 0.92);
-    box-shadow: 0 -2px 12px rgba(0,0,0,0.18);
-    width: 100vw;
+    color: #181818;
+    font-size: 2rem;
+    background: none;
+    width: 100%;
     margin: 0 auto;
-    position: relative;
-    bottom: 0;
+    position: fixed;
     left: 0;
     right: 0;
-    border-top: 2px solid #ff69b4;
+    bottom: 0;
+    z-index: 10;
 }
 footer .insta-link img {
     background: none;
