@@ -33,7 +33,11 @@ function afficherImageEnGrand(url) {
     overlay.style.display = 'flex';
     overlay.style.alignItems = 'center';
     overlay.style.justifyContent = 'center';
-    overlay.style.zIndex = '1000';
+    overlay.style.zIndex = '2000'; // Plus haut que le menu hamburger
+
+    // Désactive le menu hamburger
+    const hamburgerBtn = document.querySelector('.hamburger-btn');
+    if (hamburgerBtn) hamburgerBtn.style.pointerEvents = 'none';
 
     // Création de l'image affichée en grand
     const img = document.createElement('img');
@@ -52,8 +56,11 @@ function afficherImageEnGrand(url) {
     closeBtn.style.fontSize = '2rem';
     closeBtn.style.color = '#fff';
     closeBtn.style.cursor = 'pointer';
-    closeBtn.style.zIndex = '1001';
-    closeBtn.onclick = () => document.body.removeChild(overlay);
+    closeBtn.style.zIndex = '2001';
+    closeBtn.onclick = () => {
+        document.body.removeChild(overlay);
+        if (hamburgerBtn) hamburgerBtn.style.pointerEvents = '';
+    };
 
     // Ajout de l'image et du bouton à l'overlay
     overlay.appendChild(img);
@@ -61,7 +68,10 @@ function afficherImageEnGrand(url) {
 
     // Fermeture de l'aperçu si on clique sur le fond sombre
     overlay.onclick = (e) => {
-        if (e.target === overlay) document.body.removeChild(overlay);
+        if (e.target === overlay) {
+            document.body.removeChild(overlay);
+            if (hamburgerBtn) hamburgerBtn.style.pointerEvents = '';
+        }
     };
 
     // Ajout de l'overlay à la page
