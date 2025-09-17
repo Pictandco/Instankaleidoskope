@@ -83,7 +83,7 @@ body {
     font-family: 'Roboto', Arial, sans-serif;
     text-align: center;
     color: #ff69b4;
-    padding-bottom: 120px; /* Espace pour le footer fixe */
+    padding-bottom: 0; /* Espace pour le footer fixe */
 }
 p {
     color: #000000;
@@ -111,7 +111,7 @@ footer {
     background: none;
     width: 100%;
     margin: 0 auto;
-    position: fixed;
+    position: static;
     left: 0;
     right: 0;
     bottom: 0;
